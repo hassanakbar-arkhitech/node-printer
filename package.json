@@ -21,10 +21,10 @@
     "node": ">= 18.0.0"
   },
   "scripts": {
-    "install": "prebuild-install || node-gyp rebuild",
+    "install": "node-gyp rebuild || prebuild-install",
     "apply-patches": "patch-package",
     "prebuild-all": "prebuild --all --force --strip --verbose --openssl_fips=X",
-    "prebuild": "prebuild",
+    "prebuild": "node-gyp rebuild || prebuild",
     "rebuild": "node-gyp rebuild"
   },
   "binary": {
